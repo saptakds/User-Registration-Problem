@@ -19,7 +19,7 @@ else
 fi
 #Email validation
 read -p "Enter an email: " email
-patEmail="^[a-zA-Z.]+@[a-zA-Z.]+.[a-zA-Z]$"
+patEmail="^[a-zA-Z0-9]+([.+-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,}([.][a-zA-Z]{2,}){0,1}$"
 if [[  $email =~ $patEmail ]]
 then
 	echo "Valid email"
@@ -38,8 +38,8 @@ fi
 #Password validation
 read -p "Enter a password: " password
 patPassword="^[a-zA-Z0-9]{8,}$"
-patOneUpper="^.*[A-Z].*"
-if [[ $password =~ $patPassword && $password =~ $patOneUpper ]]
+patExtra="^.*[A-Z].*[0-9].*$"
+if [[ $password =~ $patPassword && $password =~ $patExtra ]]
 then
 	echo "Valid password"
 else
