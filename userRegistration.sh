@@ -35,3 +35,12 @@ then
 else
 	echo "Invalid mobile"
 fi
+#Password validation
+read -p "Enter a password: " password
+patPassword="^[a-zA-Z0-9]{8,}$"
+if [[ $password =~ $patPassword ]]
+then
+	echo "Valid password"
+else
+	echo "Invalid password"
+fi
