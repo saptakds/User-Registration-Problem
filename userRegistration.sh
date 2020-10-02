@@ -17,3 +17,12 @@ then
 else
     echo "Invalid lastname"
 fi
+#Email validation
+read -p "Enter an email: " email
+patEmail="[a-zA-Z.]+@[a-zA-Z.]+.[a-zA-Z]"
+if [[  $email =~ $patEmail ]]
+then
+	echo "Valid email"
+else
+	echo "Invalid email"
+fi
