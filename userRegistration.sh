@@ -19,10 +19,19 @@ else
 fi
 #Email validation
 read -p "Enter an email: " email
-patEmail="[a-zA-Z.]+@[a-zA-Z.]+.[a-zA-Z]"
+patEmail="^[a-zA-Z.]+@[a-zA-Z.]+.[a-zA-Z]$"
 if [[  $email =~ $patEmail ]]
 then
 	echo "Valid email"
 else
 	echo "Invalid email"
+fi
+#Mobile validation
+read -p "Enter an mobile: " mobile
+patMobile="^[0-9]{2} [0-9]{10}$"
+if [[ $mobile =~ $patMobile ]]
+then
+	echo "Valid mobile"
+else
+	echo "Invalid mobile"
 fi
