@@ -38,7 +38,7 @@ fi
 #Password validation
 read -p "Enter a password: " password
 patPassword="^[a-zA-Z0-9.,!@#$&*-]{8,}$"
-patExtra="^.*[A-Z].*[0-9].*[.,!@#$&*-]{1}.*$"
+patExtra="^.*[A-Z].*[0-9].*[.,!@#$&*-]{1,1}.*$"
 if [[ $password =~ $patPassword && $password =~ $patExtra ]]
 then
 	echo "Valid password"
