@@ -38,8 +38,9 @@ fi
 #Password validation
 read -p "Enter a password: " password
 patPassword="^[a-zA-Z0-9]{8,}$"
-patOneUpper="^.*[A-Z].*"
-if [[ $password =~ $patPassword && $password =~ $patOneUpper ]]
+patOneUpper="^.*[A-Z].*$"
+patOneNo="^.*[0-9].*$"
+if [[ $password =~ $patPassword && $password =~ $patOneUpper && $patPassword =~ $patOneNo ]]
 then
 	echo "Valid password"
 else
